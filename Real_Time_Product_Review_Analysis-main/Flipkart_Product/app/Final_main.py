@@ -86,7 +86,6 @@ def plot_emotions(filename, product_name):
     else:
         st.info("No emotions detected yet.")
 
-
 # Function to scrape reviews from Flipkart product page
 def scrape_reviews_and_save_to_csv(product_name, url):
     headers = {
@@ -181,26 +180,9 @@ def main():
         else:
             st.warning("Please input some text to analyze.")
 
-    # Sentiment prediction section
-    st.header("Sentiment Analysis")
-    user_input = st.text_area("Enter a review text:")
-
-    if st.button("Predict"):
-        if user_input:
-            sentiment = predict_sentiment(user_input)
-            # Display corresponding result with emoji/GIF
-            if sentiment == "positive":
-                st.markdown("<h2 style='text-align: center;'>Positive Sentiment Detected!</h2>", unsafe_allow_html=True)
-                st.markdown('<div style="text-align: center;"><img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExeXg2N3hxaGh5ZmpkdGJkNzhzM2NyNnZnMjVlZjhrcnZrbHlweGJpMCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/chzz1FQgqhytWRWbp3/giphy.webp"></div>', unsafe_allow_html=True)
-            elif sentiment == "negative":
-                st.markdown("<h2 style='text-align: center;'>Negative Sentiment Detected!</h2>", unsafe_allow_html=True)
-                st.markdown('<div style="text-align: center;"><img src="https://media0.giphy.com/media/l1KVaj5UcbHwrBMqI/200.webp?cid=790b7611iax98h1kpxexlwp7nntp5pf4pknw720hkr687ep7&ep=v1_gifs_search&rid=200.webp&ct=g"></div>', unsafe_allow_html=True)
-            else:
-                st.error("Sentiment could not be determined.")
-    else:
-        st.warning("Please enter a review text.")
-
 # Entry point of the script
 if __name__ == "__main__":
     main()
+
+
 
