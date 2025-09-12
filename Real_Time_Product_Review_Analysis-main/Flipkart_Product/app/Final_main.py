@@ -86,11 +86,6 @@ def plot_emotions(filename, product_name):
     else:
         st.info("No emotions detected yet.")
 
-# Function to predict sentiment (positive/negative/neutral) using sentiment-analysis pipeline
-def predict_sentiment(text):
-    sentiment_classifier = pipeline('sentiment-analysis')  # Load sentiment model
-    result = sentiment_classifier(text)  # Predict sentiment
-    return result[0]['label']  # Return label only
 
 # Function to scrape reviews from Flipkart product page
 def scrape_reviews_and_save_to_csv(product_name, url):
@@ -208,3 +203,4 @@ def main():
 # Entry point of the script
 if __name__ == "__main__":
     main()
+
